@@ -1,0 +1,370 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', 'sans-serif'
+}
+
+body {
+  background: #1f242d;
+  color: #fff;
+}
+
+.header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 10%; 
+  background: transparent;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+  
+}
+
+.logo{
+
+  font-size: 25px;
+  color: #fff;
+  font-weight: 600;
+  cursor: default;
+  opacity: 0;
+  animation: slideTop .5s ease forwards;
+}
+
+
+.navbar a{
+  display: inline-block;
+  font-size: 18px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  margin-left: 35px;
+  transition: .3s;
+  opacity: 0;
+  animation: slideRight 1s ease forwards;
+  animation-delay: calc(.2s * var(--i))
+}
+
+.navbar a:hover,
+.navbar a.active{
+
+  color: #0ef;
+
+}
+
+.home {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 70px 10% 0;
+
+
+}
+
+.home-content {
+  max-width: 600px;
+
+}
+.home-content h3{
+  font-size: 32px;
+  font-weight: 700;
+  opacity: 0;
+  animation: slideBottom 1s ease forwards;
+  animation-delay: .7s;
+}
+.home-content h3:nth-of-type(2) {
+  margin-bottom: 30px;
+  animation: slideTop 1s ease forwards;
+  animation-delay: .7s;
+}
+
+.home-content h3 span{
+  color: #0ef;
+}
+
+.home-content h1{
+
+  font-size: 56px;
+  font-weight: 700;
+  margin: -3px 0;
+  opacity: 0;
+  animation: slideRight 1s ease forwards;
+  animation-delay: 1s;
+}
+
+.home-content p {
+  font-size: 16px;
+  opacity: 0;
+  animation: slideLeft 1s ease forwards;
+  animation-delay: 1s;
+}
+
+.social-media a {
+  display: inline flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: 2px solid #0ef;
+  border-radius: 50%;
+  font-size: 20px;
+  color: #0ef;
+  text-decoration: none;
+  margin: 30px 15px 30px 0;
+  opacity: 0;
+  animation: slideLeft 1s ease forwards;
+  animation-delay: calc(.2s * var(--i));
+}
+
+.social-media a:hover{
+  background: #0ef;
+  color: #1f242d;
+  box-shadow: 0 0 20px #0ef;
+}
+
+.btn{
+  display: inline-block;
+  padding: 12px 28px;
+  background: #0ef;
+  border-radius: 40px;
+  box-shadow: 0 0 10px #0ef;
+  font-size: 16px;
+  color: #1f242d;
+  letter-spacing: 1px;
+  text-decoration: none;
+  font-weight: 600;
+  opacity: 0;
+  animation: slideTop 1s ease forwards;
+  animation-delay: 2s;
+}
+
+
+/*  keyframes animation */
+@keyframes slideRight {
+  0%{
+    transform: translateX(-100px);
+    opacity: 0;
+
+  }
+  100%{
+    transform: translateX(0px);
+    opacity: 1;
+    
+  }
+}
+
+@keyframes slideTop {
+  0%{
+    transform: translateY(100px);
+    opacity: 0;
+
+  }
+  100%{
+    transform: translateY(0px);
+    opacity: 1;
+    
+  }
+}
+
+@keyframes slideBottom {
+  0%{
+    transform: translateY(-100px);
+    opacity: 0;
+
+  }
+  100%{
+    transform: translateY(0px);
+    opacity: 1;
+    
+  }
+}
+
+
+@keyframes slideLeft {
+  0%{
+    transform: translateY(100px);
+    opacity: 0;
+
+  }
+  100%{
+    transform: translateY(0px);
+    opacity: 1;
+    
+  }
+}
+
+
+/* The Modal (background) */
+.modal {
+  display: none; 
+  position: fixed; 
+  z-index: 1; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; 
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; 
+  max-width: 700px;
+  text-align: center;
+}
+
+/* Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.Contacts{
+  display: flex;                
+  justify-content: center;      
+  align-items: center;          
+  height: 100vh;                
+  text-align: center;
+}
+.contacts-content a{
+  display: inline flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: 2px solid #0ef;
+  border-radius: 50%;
+  font-size: 20px;
+  color: #0ef;
+  text-decoration: none;
+  margin: 30px 15px 30px 0;
+  opacity: 0;
+  animation: slideLeft 1s ease forwards;
+  animation-delay: calc(.2s * var(--i));
+  max-width: 800px;
+  padding: 20px;
+}
+.contacts-content a:hover{
+  background: #0ef;
+  color: #1f242d;
+  box-shadow: 0 0 20px #0ef;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+.main{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background:#1f242d;
+  padding: 20px;
+}
+
+
+.profile-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 400px;
+  width: 100%;
+  margin-bottom: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.25); 
+  border-radius: 25px;
+  padding: 30px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4); 
+}
+
+.image{
+  position: relative;
+  height: 150px;
+  width: 150px;
+}
+
+.image .profile-pic{
+  
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
+}
+
+
+.data{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 15px;
+
+}
+
+.data h2{
+  font-size: 30px;
+  font-weight: 600;
+
+}
+/* New Info Card Styling */
+.info-card {
+  display: grid; /* Use CSS Grid to divide the sections */
+  grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+  gap: 20px; /* Spacing between columns */
+  max-width: 1000px;
+  width: 100%;
+  padding: 20px;
+  background: #2c333a; /* Background color for the new card */
+  border-radius: 15px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
+  margin-top: 20px;
+}
+
+/* Styling each section within the info card */
+.info-section {
+  padding: 20px;
+  border-radius: 10px;
+  background: #1f242d; /* Slightly darker background for each section */
+  color: #fff;
+  text-align: center;
+}
+
+.info-section h3 {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.info-section p {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .info-card {
+    grid-template-columns: 1fr; /* Stack columns vertically */
+  }
+}
