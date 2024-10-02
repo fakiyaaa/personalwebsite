@@ -20,3 +20,29 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   }
 });
+
+
+
+// Function to flip the order of image and text
+function flipImageText(sectionId) {
+  // Select the container of the section based on the ID passed
+  const container = document.querySelector(`#${sectionId} .features-container`);
+
+  // Check if container exists and has two children (text and image divs)
+  if (container && container.children.length === 2) {
+    const firstChild = container.children[0];
+    const secondChild = container.children[1];
+
+    // Swap the order by using insertBefore
+    container.insertBefore(secondChild, firstChild);
+  }
+}
+
+// Flip the order for main features and additional features
+flipImageText('main-features'); // This will flip the main-features section
+flipImageText('additional-features'); // This will flip the additional-featu
+
+
+<button onclick="flipImageText('main-features'); flipImageText('additional-features');">
+  Flip Image and Text
+</button>
