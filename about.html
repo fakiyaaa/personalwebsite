@@ -14,28 +14,107 @@
       <nav class="navbar">
         <a href="index.html" style="--i:1;">Home</a>
         <a href="about.html" style="--i:2;" class="active">About</a>
-        <a href="skills.html" style="--i:3;">Skills</a>
-        <a href="portfolio.html" style="--i:4;">Portfolio</a>
-        <a href="contact.html" style="--i:5;">Contact</a>
+        <a href="portfolio.html" style="--i:3;">Portfolio</a>
+        <a href="swe resume (5).pdf" style = "--i:4;">Resume</a>
+        <a href="#contacts" style="--i:5;">Contacts</a>
+        
       </nav>
     </header>
 
-    <section class="about">
-      <div class="about-content">
-        <h2>About Me</h2>
-        <p>Welcome to the About page. I am a Software Engineer with a passion for building scalable web applications and exploring new technologies. I love solving problems and turning ideas into reality through code.</p>
+    
         
-        <h3>Experience & Skills</h3>
-        <ul>
-          <li><strong>Programming Languages:</strong> Python, JavaScript, Swift, C++</li>
-          <li><strong>Web Development:</strong> HTML, CSS, JavaScript, React</li>
-          <li><strong>Mobile Development:</strong> Swift, iOS Development</li>
-        </ul>
-      </div>
-    </section>
+        
+      
 
-    <footer>
-      <p>Created by Fakiya Imangaliyeva</p>
-    </footer>
-  </body>
+    <!-- Text Section Below Image -->
+   
+  
+
+
+
+   <section class="photos">
+    <div class="container">
+      <div class="card_container">
+        <article class="card_article">
+          <img src="images/goldengatephoto.jpg" class="card_img" alt="Golden Gate Photo">
+          <div class="card_data">
+            <span class="card_description">San Francisco, California</span>
+            <h2 class="card_title">My freshman year' 2023 in San Francisco</h2>
+            
+          </div>
+        </article>
+        
+        
+        <article class="card_article1">
+          <img src="images/stanfordphoto.jpg" class="card_img" alt="Stanford University Photo">
+          <div class="card_data">
+            <span class="card_description">Palo Alto, California, Stanford</span>
+            <h2 class="card_title">My summer' 2024 in Palo Alto</h2>
+            <a href="idtech.html" class="card_button">Read More</a>
+          </div>
+        </article>
+
+        <article class="card_article">
+          <img src="images/taiwanphoto.jpg" class="card_img" alt="Taiwan Photo">
+          <div class="card_data">
+            <span class="card_description">Taipei, Taiwan</span>
+            <h2 class="card_title">My fall semester' 2024 in Taiwan</h2>
+            
+          </div>
+        </article>
+
+        <article class="card_article">
+          <img src="images/atyrau.jpg" class="card_img" alt="Stanford University Photo">
+          <div class="card_data">
+            <span class="card_description">Atyrau, Kazakhstan</span>
+            <h2 class="card_title">Home, Kazakhstan</h2>
+            
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="about-image">
+    <div class="world-map">
+      <img src="images/world_map_transparent-removebg-preview.png" alt="About Background">
+      <div class="pin usa" onclick="toggleTooltip('usa-info')">
+        <span class="pin-span">San Francisco, California</span>
+      </div>
+      <div id="usa-info" class="info-tooltip">My first city I have visited in USA! I spent my freshman year in the prettiest California!</div>
+      <div class="pin kz" onclick="toggleTooltip('kz-info')"><span class="pin-span">Atyrau, Kazakhstan</span></div>
+      <div class="pin taiwan"><span class="pin-span">Taipei, Taiwan</span></div>
+      <div class="pin korea"><span class="pin-span">Seoul, Korea</span></div>
+      <div class="pin argentina"><span class="pin-span">Buenos-Aires, Argentine</span></div>
+      <div class="pin germany"><span class="pin-span">Berlin, Germany</span></div>
+    </div>
+  </section>
+
+  <section class="information-about">
+   <div class="about-content">
+   <h2>Why these countries?</h2>
+   <p>
+     Origially I am from Kazakhstan, and I went abroad to pursue my Bachelor Degree in CS and AI at Minerva University. 
+     Currently, I am a sophomore, S\in one of the selective Universities with an acceptance 
+     rate of under 2%. Offers interdisciplinary project-based learning, analytical decision-making, 
+     creative problem-solving curriculum, and immersion 7 cities worldwide: San Francisco, 
+     Seoul, Taipei, Hyderabad, Berlin, Buenos Aires, London.
+
+   </p>
+
+
+   </div>
+  </section>
+
+  <section class="Contacts" id="contacts">
+    <div class ="contacts-content">
+      <h3>Thank you for visiting my portfolio!</h3>
+      <a href="https://www.linkedin.com/in/fakiya/" style ="--i:7"><i class='bx bxl-linkedin'></i> </a>
+      <a href="https://github.com/fakiyaaa" style ="--i:8"><i class='bx bxl-github' ></i> </a>
+    </div>
+
+
+  </section>
+  <script src="learningreact.js"></script>
+</body>
 </html>

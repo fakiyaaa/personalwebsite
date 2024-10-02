@@ -368,3 +368,812 @@ html {
     grid-template-columns: 1fr; /* Stack columns vertically */
   }
 }
+
+*{
+  box-sizing: border-box;
+
+}
+
+.about-image {
+  margin-top: 70px;
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  height: calc(100vh - 70px);
+  width: 100vw; 
+  overflow: hidden;
+  background: #1f242d; 
+}
+
+
+
+.world-map {
+  width: 90%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1em;
+  position: relative;
+}
+
+
+.world-map img{
+  width: 90%;
+  height: auto;
+  object-fit: contain;
+}
+
+.world-map div {
+  position: absolute;
+  font-size: 12px;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+  padding: 5px 10px;
+  border-radius: 8px;
+  transform: translate(-50%, -50%); /* Center pin labels */
+}
+
+
+.pin {
+  background: #4362f8;
+  position: absolute;
+  width: 0.7em;
+  height: 0.7em;
+  border-radius: 50%;
+
+}
+
+.pin::before{
+  content: '';
+  background: #4362f8;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  animation: 
+    pulse 1.3s ease-in-out infinite;
+}
+@keyframes pulse {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1); /* Initial size */
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1.5); /* Reduced scale */
+  }
+}
+
+.pin-span {
+  display: inline-block;
+  white-space: nowrap;
+  background: #fff;
+  border-radius: 3em;
+  padding: 0.3em 0.6em;
+  font-size: 12px;
+  color: #333;
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+
+.usa {
+  top: 38%; /* Moved up slightly */
+  left: 19%; /* Slightly adjusted to the left */
+}
+
+/* Kazakhstan (Atyrau) */
+.kz {
+  top: 40%; /* Adjusted vertical position */
+  left: 57%; /* Fine-tuned for better horizontal alignment */
+}
+
+/* Taiwan (Taipei) */
+.taiwan {
+  top: 61%; /* Adjusted to be closer to Taipei */
+  left: 77%; /* Fine-tuned horizontal position */
+}
+
+/* Korea (Seoul) */
+.korea {
+  top: 47%; /* Slightly moved up */
+  left: 72%; /* Minor left adjustment */
+}
+
+/* Argentina (Buenos-Aires) */
+.argentina {
+  top: 75%; /* Move up to align with South America */
+  left: 28%; /* Centered horizontally */
+}
+
+/* Germany (Berlin) */
+.germany {
+  top: 35%; /* Minor adjustment */
+  left: 54%; /* Centered more accurately */
+}
+
+:root {
+  --title-color: #0ef; /* Light Blue Color */
+  --container-color: #2c333a;
+  --small-font-size: 16px;
+  --h2-font-size: 24px;
+  --hover-bg: rgba(14, 240, 255, 0.1); /* Light blue background for hover */
+}
+
+/* Information About Section */
+.information-about {
+  width: 100%;
+  background: var(--container-color); 
+  color: #fff;
+  padding: 70px 10%; 
+  opacity: 0;
+  animation: slideUp 1s ease forwards; 
+  animation-delay: 0.3s; 
+}
+
+.information-about .about-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.information-about h2 {
+  font-size: 42px;
+  margin-bottom: 25px;
+  font-weight: 700;
+  color: #0ef; /* Light blue text color */
+  text-shadow: /* Glow effect */
+               0px 0px 20px rgba(14, 240, 255, 0.5), 
+               0px 0px 30px rgba(14, 240, 255, 0.3);
+
+}
+
+.information-about p {
+  font-size: 18px;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  text-align: justify;
+}
+
+/* Animation Keyframes */
+@keyframes slideUp {
+  0% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Container for Photos Section */
+.container {
+  display: grid;
+  place-items: center;
+  padding: 60px 0;
+  margin-top: 50px;
+}
+
+.card_container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 3rem; 
+  max-width: 1200px;
+  width: 100%;
+}
+
+/* Individual Card Styling */
+.card_article {
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; 
+}
+
+/* Hover Effect for Card */
+.card_article:hover {
+  transform: scale(1.05); /* Slight scaling effect on hover */
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4); /* Deepen the shadow */
+}
+
+/* Card Image Styling */
+.card_img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  border-radius: 15px 15px 0 0; 
+  transition: transform 0.4s ease; /* Smooth zoom effect */
+}
+
+/* Hover Effect for Image */
+.card_article:hover .card_img {
+  transform: scale(1.1); /* Zoom effect on hover */
+}
+
+/* Card Data Styling */
+.card_data {
+  background: var(--container-color);
+  padding: 1.5rem 2rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  border-radius: 0 0 15px 15px; 
+  text-align: center;
+  transition: background 0.4s ease, color 0.4s ease;
+}
+
+.card_article:hover .card_data {
+  background: var(--hover-bg); /* Change background on hover */
+  color: var(--title-color); /* Change text color */
+}
+
+/* Card Description and Title */
+.card_description {
+  display: block;
+  font-size: var(--small-font-size);
+  margin-bottom: 0.5rem;
+  color: #ccc;
+  transition: color 0.4s ease; /* Smooth transition for text color */
+}
+
+.card_article:hover .card_description {
+  color: var(--title-color); /* Change description text color */
+}
+
+.card_title {
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--title-color);
+  margin-bottom: 1rem;
+  transition: color 0.4s ease; /* Smooth transition for title color */
+}
+
+/* Responsive Design Adjustments */
+@media (max-width: 768px) {
+  .card_container {
+    grid-template-columns: 1fr; /* One column for mobile screens */
+    gap: 2rem;
+  }
+
+  .information-about h2 {
+    font-size: 32px;
+  }
+}
+.card_button{
+  text-decoration: none;
+  font-size: var(--small-font-size);
+  font-weight: 500;
+  color: var(--first-color);
+
+}
+
+.card_button:hover{
+  text-decoration: underline;
+  
+}
+
+
+
+.portfolio {
+  position: relative;
+  width: 100%;
+  display: flex; /* Use flexbox to align items */
+  justify-content: center; /* Center horizontally */
+  align-items: flex-start; /* Center vertically */
+  padding: 70px 10% 0;
+  background: #1f242d;
+}
+
+
+.portfolio-about h1 {
+  font-size: 36px; /* Increase the font size */
+  font-weight: 800; /* Bolder text */
+  text-align: center; /* Center the text */
+  color: #0ef; /* Light blue text color */
+  text-shadow: /* Glow effect */
+               0px 0px 20px rgba(14, 240, 255, 0.5), 
+               0px 0px 30px rgba(14, 240, 255, 0.3);
+  margin-top: 50px; /* Move the text slightly down */
+  opacity: 0;
+  animation: slideBottom 1s ease forwards;
+  animation-delay: .7s;
+}
+
+/* Keyframe Animation for Sliding from Bottom */
+@keyframes slideBottom {
+  0% {
+    transform: translateY(50px); /* Start 50px below */
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0); /* Move to its original position */
+    opacity: 1;
+  }
+}
+
+
+.idtech {
+  position: relative;
+  width: 100%;
+  display: flex; /* Use flexbox to align items */
+  justify-content: center; /* Center horizontally */
+  align-items: flex-start; /* Center vertically */
+  padding: 70px 10% 0;
+  background: #1f242d;
+}
+
+/* Styles for the About Section */
+.idtech-about h1 {
+  font-size: 36px; /* Increase the font size */
+  font-weight: 800; /* Bolder text */
+  text-align: center; /* Center the text */
+  color: #0ef; /* Light blue text color */
+  text-shadow: /* Glow effect */
+               0px 0px 20px rgba(14, 240, 255, 0.5), 
+               0px 0px 30px rgba(14, 240, 255, 0.3);
+  margin-top: 50px; /* Move the text slightly down */
+  opacity: 0;
+  animation: slideBottom 1s ease forwards;
+  animation-delay: .7s;
+}
+
+/* Keyframe Animation for Sliding from Bottom */
+@keyframes slideBottom {
+  0% {
+    transform: translateY(50px); /* Start 50px below */
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0); /* Move to its original position */
+    opacity: 1;
+  }
+}
+/* Global Styles */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background: #1f242d; /* Match the dark background */
+  color: #ffffff; /* Light text color for readability */
+}
+
+
+/* About Section */
+.idtech-about {
+  padding: 70px 10% 20px;
+  text-align: center;
+}
+
+/* About Section */
+.idtech-about h1 {
+  font-size: 36px;
+  font-weight: 800;
+  text-align: center;
+  color: #0ef;
+  text-shadow: 0px 0px 20px rgba(14, 240, 255, 0.5), 
+               0px 0px 30px rgba(14, 240, 255, 0.3); /* Glow effect */
+  margin-top: 50px;
+  opacity: 0;
+  animation: slideBottom 1s ease forwards;
+  animation-delay: .7s;
+}
+
+/* Keyframe Animation for Sliding from Bottom */
+@keyframes slideBottom {
+  0% {
+    transform: translateY(50px); /* Start 50px below */
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0); /* Move to its original position */
+    opacity: 1;
+  }
+}
+
+/* Gallery Section - Single Row Layout */
+.gallery {
+  display: flex; /* Use flexbox to align items in a row */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  gap: 30px; /* Space between images */
+  margin: 50px auto; /* Center the gallery with top and bottom spacing */
+  overflow-x: auto; /* Enable horizontal scrolling if needed */
+}
+
+/* Individual gallery item styles */
+.gallery-item {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 15px; /* Rounded corners */
+  transition: transform 0.4s ease; /* Smooth animation */
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+}
+
+/* Hover effect for gallery items */
+.gallery-item:hover {
+  transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
+/* Container for Photos Section */
+.work_container {
+  display: grid;
+  place-items: center;
+  padding: 60px 0;
+  margin-top: 50px;
+}
+
+.workcard_container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 3rem; 
+  max-width: 1200px;
+  width: 100%;
+}
+
+/* Individual Card Styling */
+.work_article {
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; 
+}
+
+/* Hover Effect for Card */
+.work_article:hover {
+  transform: scale(1.05); /* Slight scaling effect on hover */
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4); /* Deepen the shadow */
+}
+
+/* Card Image Styling */
+.work_img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  border-radius: 15px 15px 0 0; 
+  transition: transform 0.4s ease; /* Smooth zoom effect */
+}
+
+/* Hover Effect for Image */
+.work_article:hover .work_img {
+  transform: scale(1.1); /* Zoom effect on hover */
+}
+
+/* Card Data Styling */
+.work_data {
+  background: #25262a;
+  padding: 1.5rem 2rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  border-radius: 0 0 15px 15px; 
+  text-align: center;
+  transition: background 0.4s ease, color 0.4s ease;
+}
+
+.work_article:hover .work_data {
+  background: #333; /* Change background on hover */
+  color: #0ef; /* Change text color */
+}
+
+/* Card Description and Title */
+.work_description {
+  display: block;
+  font-size: 16px;
+  margin-bottom: 0.5rem;
+  color: #ccc;
+  transition: color 0.4s ease; /* Smooth transition for text color */
+}
+
+.work_article:hover .work_description {
+  color: #0ef; /* Change description text color */
+}
+
+.work_title {
+  font-size: 22px;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 1rem;
+  transition: color 0.4s ease; /* Smooth transition for title color */
+}
+
+/* Responsive Design Adjustments */
+@media (max-width: 768px) {
+  .workcard_container {
+    grid-template-columns: 1fr; /* One column for mobile screens */
+    gap: 2rem;
+  }
+}
+
+.work_button {
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  color: #0ef;
+}
+
+.work_button:hover {
+  text-decoration: underline;
+}
+
+/* Bottom Section - About Instructor */
+.idtech-about {
+  padding: 70px 10% 20px;
+  text-align: center;
+  background: #1f242d; /* Match the page background */
+  color: #ffffff; /* Light text for readability */
+  border-top: 1px solid rgba(255, 255, 255, 0.1); /* Light border to separate sections */
+}
+
+.idtech-about h1 {
+  font-size: 36px;
+  font-weight: 800;
+  text-align: center;
+  color: #0ef; /* Light blue text color */
+  text-shadow: 0px 0px 20px rgba(14, 240, 255, 0.5), 
+               0px 0px 30px rgba(14, 240, 255, 0.3); /* Glow effect */
+  margin-top: 50px;
+  animation: slideBottom 1s ease forwards;
+  animation-delay: .7s;
+}/* Responsibility and Impact Section Styling */
+
+/* Responsibility and Impact Section Styling */
+.responsibility-impact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 0;
+  background: transparent; /* Transparent background */
+}
+
+.responsibility-impact-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(31, 36, 45, 0.85); /* Semi-transparent background matching the theme */
+  border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle border */
+  border-radius: 30px; /* Rounded corners */
+  width: 80%;
+  max-width: 1200px;
+  padding: 60px;
+  box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.4); /* Darker shadow for depth */
+  position: relative;
+}
+
+.column {
+  width: 45%; /* Each column takes up 45% of the container width */
+  text-align: left;
+}
+
+.column h3 {
+  font-size: 26px;
+  margin-bottom: 20px;
+  color: #0ef; /* Use the light blue accent color for headings */
+  font-weight: 700;
+}
+
+.column p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #ddd; /* Light gray color for readability */
+  margin-bottom: 20px;
+}
+
+/* Enhanced Divider Styling */
+.divider {
+  height: 100px; /* Set height of the divider */
+  width: 2px; /* Narrow width for the divider */
+  background: rgba(255, 255, 255, 0.3); /* Subtle semi-transparent divider */
+  margin: 0 30px; /* Space between the columns */
+}
+
+/* Hover Effects */
+.column:hover p {
+  color: #0ef; /* Change text color on hover */
+  transition: color 0.3s ease-in-out;
+}
+
+/* Responsive Design for Smaller Screens */
+@media screen and (max-width: 768px) {
+  .responsibility-impact-container {
+    flex-direction: column; /* Stack items vertically */
+    padding: 30px;
+  }
+
+  .column {
+    width: 100%; /* Full width for each column */
+    margin-bottom: 20px;
+  }
+
+  .divider {
+    display: none; /* Remove the divider on small screens */
+  }
+}
+
+
+/* Horizontal Line Styling */
+.custom-line {
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.2); /* Light, subtle line */
+  margin: 50px 10% 50px; /* Adjust spacing around the line */
+}
+
+/* Tools and Frameworks Section Styling */
+.tools-frameworks {
+  padding: 50px 10%;
+  background: #1f242d; /* Same background as the rest of the page */
+  color: #ffffff; /* White text for contrast */
+  text-align: center;
+}
+
+.tools-title {
+  font-size: 36px;
+  font-weight: 800;
+  color: #0ef; /* Light blue accent color */
+  margin-bottom: 40px; /* Space below the title */
+}
+
+.tools-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns */
+  gap: 30px; /* Space between items */
+}
+
+.tool-item {
+  background: rgba(255, 255, 255, 0.1); /* Semi-transparent background for tools */
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+.tool-item:hover {
+  transform: scale(1.05); /* Slight scaling effect */
+  box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.3); /* Deepen shadow */
+}
+
+.tool-item h3 {
+  font-size: 22px;
+  margin-bottom: 15px;
+  color: #0ef; /* Light blue color for tool names */
+}
+
+.tool-item p {
+  font-size: 16px;
+  color: #ccc; /* Light gray for descriptions */
+  line-height: 1.6;
+}
+
+/* Responsive Design for Smaller Screens */
+@media screen and (max-width: 768px) {
+  .tools-list {
+    grid-template-columns: 1fr; /* Stack items vertically */
+    gap: 20px;
+  }
+}
+
+
+/* General Reset */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #1f242d; /* Dark background */
+  color: #ffffff; /* Light text color */
+}
+
+/* Header Styling */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 10%;
+  background: #1f242d;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+}
+
+.header .logo {
+  font-size: 28px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.navbar a {
+  text-decoration: none;
+  font-size: 16px;
+  color: #fff;
+  margin-left: 20px;
+}
+
+.navbar a:hover,
+.navbar a.active {
+  color: #0ef; /* Light blue accent */
+}
+
+/* Main Image Section */
+.main-image-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 0 20px; /* Space above and below */
+  margin-top: 60px; /* Space to account for fixed header */
+}
+
+.main-image {
+  max-width: 80%;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.4); /* Subtle shadow for the image */
+}
+
+/* Description Section */
+.description-section {
+  text-align: center;
+  padding: 40px 10%;
+}
+
+.description-section h2 {
+  font-size: 36px;
+  font-weight: 800;
+  color: #0ef; /* Light blue accent */
+  margin-bottom: 20px;
+}
+
+.description-section p {
+  font-size: 18px;
+  color: #ccc; /* Lighter gray text */
+  line-height: 1.6;
+}
+
+/* Project Details Section */
+.project-details {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  padding: 50px 10%;
+  background: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+  border-radius: 15px;
+  margin: 40px 10%;
+}
+
+.detail-card {
+  width: 30%; /* Each card takes 30% of the container width */
+  text-align: center;
+  padding: 20px;
+  border-radius: 15px;
+  background: #2c333a; /* Slightly lighter dark color */
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.detail-card:hover {
+  transform: translateY(-10px); /* Lift effect on hover */
+  box-shadow: 0px 12px 30px rgba(0, 0, 0, 0.4); /* Deepen shadow */
+}
+
+.detail-card h3 {
+  font-size: 24px;
+  color: #0ef; /* Light blue text color */
+  margin-bottom: 15px;
+}
+
+.detail-card p {
+  font-size: 16px;
+  color: #ddd; /* Light gray text for description */
+  line-height: 1.6;
+}
+
+/* Footer Section */
+.footer {
+  text-align: center;
+  padding: 20px 10%;
+  background: #1f242d;
+  color: #aaa; /* Light gray text for the footer */
+}
