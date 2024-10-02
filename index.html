@@ -18,35 +18,40 @@
         <a href="portfolio.html" style = "--i:3;" >Portfolio</a>
         <a href="swe resume (5).pdf" style = "--i:4;">Resume</a>
         <a href="#contacts" style = "--i:5;">Contacts</a>
-       
       </nav>
-
     </header>
 
-
-    <section class = "home"> 
-
-      <div class="home-content"> 
-         <h3>Hello!</h3>
-         <h1>I'm Fakiya</h1>
-         <h3>And I'm a <span>Software Engineer</span></h3>
-         <p>Currently sophomore studying Computer Science and Artificial Intelligence at Minerva University and travelling along the way!</p>
-         <div class = "social-media">
-          <a href="https://www.linkedin.com/in/fakiya/" style ="--i:7"><i class='bx bxl-linkedin'></i> </a>
-          <a href="https://github.com/fakiyaaa" style ="--i:8"><i class='bx bxl-github' ></i> </a>
-
-         </div>
-         <a href="#" class="btn" id="cvButton">CV</a>
-         
-      </div>
-      <div class="home-img"><img src="home.png" alt=""> </div>
-      <div id="cvModal" class="modal">
-        <div class="modal-content">
-          <span class="close">&times;</span>
-          <embed src="swe resume (5).pdf" type="application/pdf" width="100%" height="600px" />
+    <section class="home"> 
+      <div class="home-flex-container"> <!-- Added a new container to wrap text and map -->
+        <div class="home-content"> 
+          <h3>Hello!</h3>
+          <h1>I'm Fakiya</h1>
+          <h3>And I'm a <span>Software Engineer</span></h3>
+          <p>Currently a sophomore studying Computer Science and Artificial Intelligence at Minerva University and traveling along the way!</p>
+          <div class="social-media">
+            <a href="https://www.linkedin.com/in/fakiya/" style ="--i:7"><i class='bx bxl-linkedin'></i> </a>
+            <a href="https://github.com/fakiyaaa" style ="--i:8"><i class='bx bxl-github' ></i> </a>
+          </div>
+          <a href="#" class="btn" id="cvButton">CV</a>
         </div>
-      </div> 
-      
+
+        <!-- Map Section -->
+        <section class="about-image1">
+          <div class="world-map1">
+            <img src="images/world_map_transparent-removebg-preview.png" alt="About Background">
+            <div class="pin usa1" onclick="toggleTooltip('usa-info')">
+              <span class="pin-span1">San Francisco, California</span>
+            </div>
+            <div id="usa-info1" class="info-tooltip1">My first city I have visited in USA! I spent my freshman year in the prettiest California!</div>
+            <div class="pin kz1" onclick="toggleTooltip('kz-info')"><span class="pin-span">Atyrau, Kazakhstan</span></div>
+            <div class="pin taiwan1"><span class="pin-span1">Taipei, Taiwan</span></div>
+            <div class="pin korea1"><span class="pin-span1">Seoul, Korea</span></div>
+            <div class="pin argentina1"><span class="pin-span1">Buenos-Aires, Argentine</span></div>
+            <div class="pin germany1"><span class="pin-span1">Berlin, Germany</span></div>
+          </div>
+        </section>
+        
+      </div>
     </section>
 
     <section class="Contacts" id="contacts">
@@ -55,12 +60,8 @@
         <a href="https://www.linkedin.com/in/fakiya/" style ="--i:7"><i class='bx bxl-linkedin'></i> </a>
         <a href="https://github.com/fakiyaaa" style ="--i:8"><i class='bx bxl-github' ></i> </a>
       </div>
-
-
     </section>
 
-    
-
-    <script src="learningreact.js"> </script>
+    <script src="learningreact.js"></script>
   </body>
 </html>
