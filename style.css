@@ -1360,3 +1360,27 @@ body, html {
   background: #1f242d;
   color: #aaa; /* Light gray text for the footer */
 }
+
+
+
+
+.home-content p {
+  font-size: 18px; /* Slightly larger font size for readability */
+  line-height: 1.6; /* Increased line height for better spacing */
+  font-weight: 400; /* Adjusted font weight for smoother text */
+  margin-top: 20px; /* Add some spacing above the paragraph */
+}
+
+/* Highlighted Link Styling */
+.home-content p span a.here-button {
+  color: #0ef; /* Light blue color for the link */
+  text-decoration: none; /* Remove underline */
+  font-weight: 600; /* Slightly bolder for emphasis */
+  transition: color 0.3s ease; /* Smooth color change on hover */
+}
+
+/* Hover Effect for Link */
+.home-content p span a.here-button:hover {
+  color: #00ccff; /* Slightly darker shade on hover */
+  text-decoration: underline; /* Underline for emphasis */
+}
