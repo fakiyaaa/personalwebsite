@@ -1196,61 +1196,60 @@ body, html {
 .tools-title {
   font-size: 36px;
   font-weight: 800;
-  color: #0ef; /* Light blue accent color */
-  margin-bottom: 40px; /* Space below the title */
+  color: #0ef; 
+  margin-bottom: 40px; 
 }
 
 .tools-list {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 columns */
-  gap: 30px; /* Space between items */
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 30px; 
 }
 
 .tool-item {
-  background: rgba(255, 255, 255, 0.1); /* Semi-transparent background for tools */
+  background: rgba(255, 255, 255, 0.1); 
   border-radius: 15px;
   padding: 30px;
-  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2); 
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
 /* Hover Effect */
 .tool-item:hover {
-  transform: scale(1.05); /* Slight scaling effect */
-  box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.3); /* Deepen shadow */
+  transform: scale(1.05); 
+  box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.3); 
 }
 
 .tool-item h3 {
   font-size: 22px;
   margin-bottom: 15px;
-  color: #0ef; /* Light blue color for tool names */
+  color: #0ef; 
 }
 
 .tool-item p {
   font-size: 16px;
-  color: #ccc; /* Light gray for descriptions */
+  color: #ccc; 
   line-height: 1.6;
 }
 
-/* Responsive Design for Smaller Screens */
+
 @media screen and (max-width: 768px) {
   .tools-list {
-    grid-template-columns: 1fr; /* Stack items vertically */
+    grid-template-columns: 1fr; 
     gap: 20px;
   }
 }
 
 
-/* General Reset */
 body, html {
   margin: 0;
   padding: 0;
   font-family: 'Poppins', sans-serif;
   background: #1f242d; /* Dark background */
-  color: #ffffff; /* Light text color */
+  color: #ffffff; 
 }
 
-/* Header Styling */
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -1277,16 +1276,15 @@ body, html {
 
 .navbar a:hover,
 .navbar a.active {
-  color: #0ef; /* Light blue accent */
+  color: #0ef; 
 }
 
-/* Main Image Section */
 .main-image-section {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 80px 0 20px; /* Space above and below */
-  margin-top: 60px; /* Space to account for fixed header */
+  padding: 80px 0 20px;
+  margin-top: 60px; 
 }
 
 .main-image {
@@ -1315,72 +1313,71 @@ body, html {
   line-height: 1.6;
 }
 
-/* Project Details Section */
+
 .project-details {
   display: flex;
   justify-content: space-around;
   align-items: flex-start;
   padding: 50px 10%;
-  background: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+  background: rgba(255, 255, 255, 0.1);
   border-radius: 15px;
   margin: 40px 10%;
 }
 
 .detail-card {
-  width: 30%; /* Each card takes 30% of the container width */
+  width: 30%; 
   text-align: center;
   padding: 20px;
   border-radius: 15px;
-  background: #2c333a; /* Slightly lighter dark color */
-  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+  background: #2c333a; 
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3); 
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
 .detail-card:hover {
-  transform: translateY(-10px); /* Lift effect on hover */
-  box-shadow: 0px 12px 30px rgba(0, 0, 0, 0.4); /* Deepen shadow */
+  transform: translateY(-10px);
+  box-shadow: 0px 12px 30px rgba(0, 0, 0, 0.4); 
 }
 
 .detail-card h3 {
   font-size: 24px;
-  color: #0ef; /* Light blue text color */
+  color: #0ef; 
   margin-bottom: 15px;
 }
 
 .detail-card p {
   font-size: 16px;
-  color: #ddd; /* Light gray text for description */
+  color: #ddd; 
   line-height: 1.6;
 }
 
-/* Footer Section */
+
 .footer {
   text-align: center;
   padding: 20px 10%;
   background: #1f242d;
-  color: #aaa; /* Light gray text for the footer */
+  color: #aaa; 
 }
 
 
 
 
 .home-content p {
-  font-size: 18px; /* Slightly larger font size for readability */
-  line-height: 1.6; /* Increased line height for better spacing */
-  font-weight: 400; /* Adjusted font weight for smoother text */
-  margin-top: 20px; /* Add some spacing above the paragraph */
+  font-size: 18px; 
+  line-height: 1.6; 
+  font-weight: 400; 
+  margin-top: 20px; 
 }
 
-/* Highlighted Link Styling */
 .home-content p span a.here-button {
-  color: #0ef; /* Light blue color for the link */
-  text-decoration: none; /* Remove underline */
-  font-weight: 600; /* Slightly bolder for emphasis */
-  transition: color 0.3s ease; /* Smooth color change on hover */
+  color: #0ef; 
+  text-decoration: none; 
+  font-weight: 600; 
+  transition: color 0.3s ease; 
 }
 
-/* Hover Effect for Link */
+
 .home-content p span a.here-button:hover {
-  color: #00ccff; /* Slightly darker shade on hover */
-  text-decoration: underline; /* Underline for emphasis */
+  color: #00ccff; 
+  text-decoration: underline;
 }

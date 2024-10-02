@@ -22,7 +22,7 @@
     </header>
 
     <section class="home"> 
-      <div class="home-flex-container"> <!-- Added a new container to wrap text and map -->
+      <div class="home-flex-container">
         <div class="home-content"> 
           <h3>Hello!</h3>
           <h1>I'm Fakiya</h1>
@@ -35,7 +35,15 @@
           </div>
           <a href="#" class="btn" id="cvButton">CV</a>
         </div>
-
+        
+        <!-- The Modal -->
+        <div id="cvModal" class="modal">
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <embed src="swe resume (5).pdf" type="application/pdf" width="100%" height="600px" />
+          </div>
+        </div>
+    
         <!-- Map Section -->
         <section class="about-image1">
           <div class="world-map1">
@@ -55,7 +63,7 @@
       </div>
     </section>
 
-    <section class="Contacts" id="contacts">
+    <section class="Contacts" id="contacts" >
       <div class ="contacts-content">
         <h3>Thank you for visiting my portfolio!</h3>
         <a href="https://www.linkedin.com/in/fakiya/" style ="--i:7"><i class='bx bxl-linkedin'></i> </a>
@@ -64,5 +72,30 @@
     </section>
 
     <script src="learningreact.js"></script>
-  </body>
+  <script>
+    // JavaScript to dynamically update active class in the navbar based on scroll position
+    window.addEventListener('scroll', function() {
+      const sections = document.querySelectorAll('section'); // Select all sections
+      const navLinks = document.querySelectorAll('.navbar a'); // Select all nav links
+
+      let currentSection = ''; // Store the id of the current section in view
+
+      // Loop through each section to check if it is currently visible
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 150; // Get section top position
+        if (window.scrollY >= sectionTop) {
+          currentSection = section.getAttribute('id'); // Update current section
+        }
+      });
+
+      // Loop through each link and update the active class
+      navLinks.forEach(link => {
+        link.classList.remove('active'); // Remove active class from all links
+        if (link.getAttribute('href').includes(currentSection)) {
+          link.classList.add('active'); // Add active class to the visible section link
+        }
+      });
+    });
+  </script>
+</body>
 </html>
