@@ -983,105 +983,102 @@ body, html {
 .gallery-item:hover {
   transform: scale(1.1); /* Slight zoom effect on hover */
 }
-
-/* Container for Photos Section */
 .work_container {
-  display: grid;
-  place-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 60px 0;
-  margin-top: 50px;
-}
-
-.workcard_container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); 
-  gap: 3rem; 
-  max-width: 1200px;
   width: 100%;
 }
 
-/* Individual Card Styling */
+/* Grid layout for cards */
+.workcard_container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Three columns */
+  gap: 3rem;
+  max-width: 1200px;
+  width: 100%;
+  align-items: stretch; /* Ensure cards stretch evenly */
+}
+
+/* Ensure the <a> link covers the entire card */
+.work_link {
+  text-decoration: none;
+  color: inherit;
+  display: block; /* Make the link block-level */
+  height: 100%; /* Ensure link covers full height of card */
+}
+
+/* Card Styling */
 .work_article {
-  position: relative;
-  overflow: hidden;
+  display: flex;
+  flex-direction: column;
   border-radius: 15px;
+  overflow: hidden;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; 
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: #25262a;
+  height: 100%; /* Ensure cards have consistent height */
 }
 
-/* Hover Effect for Card */
+/* Card hover effect */
 .work_article:hover {
-  transform: scale(1.05); /* Slight scaling effect on hover */
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4); /* Deepen the shadow */
+  transform: scale(1.05);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
 }
 
-/* Card Image Styling */
+/* Image styling */
 .work_img {
   width: 100%;
   height: 240px;
   object-fit: cover;
-  border-radius: 15px 15px 0 0; 
-  transition: transform 0.4s ease; /* Smooth zoom effect */
+  border-radius: 15px 15px 0 0;
+  transition: transform 0.4s ease;
 }
 
-/* Hover Effect for Image */
+/* Image hover effect */
 .work_article:hover .work_img {
-  transform: scale(1.1); /* Zoom effect on hover */
+  transform: scale(1.1);
 }
 
 /* Card Data Styling */
 .work_data {
-  background: #25262a;
   padding: 1.5rem 2rem;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-  border-radius: 0 0 15px 15px; 
   text-align: center;
-  transition: background 0.4s ease, color 0.4s ease;
+  flex-grow: 1; /* Ensure content fills the card */
 }
 
-.work_article:hover .work_data {
-  background: #333; /* Change background on hover */
-  color: #0ef; /* Change text color */
-}
-
-/* Card Description and Title */
+/* Card Description Styling */
 .work_description {
-  display: block;
   font-size: 12px;
-  margin-bottom: 0.5rem;
   color: #ccc;
-  transition: color 0.4s ease; /* Smooth transition for text color */
+  margin-bottom: 0.5rem;
+  transition: color 0.4s ease;
 }
 
 .work_article:hover .work_description {
-  color: #0ef; /* Change description text color */
+  color: #0ef; /* Change description color on hover */
 }
 
+/* Card Title Styling */
 .work_title {
   font-size: 16px;
   font-weight: 600;
   color: #ffffff;
   margin-bottom: 1rem;
-  transition: color 0.4s ease; /* Smooth transition for title color */
+  transition: color 0.4s ease;
 }
 
-/* Responsive Design Adjustments */
+.work_article:hover .work_title {
+  color: #0ef; /* Change title color on hover */
+}
+
+/* Responsive Design for Smaller Screens */
 @media (max-width: 768px) {
   .workcard_container {
     grid-template-columns: 1fr; /* One column for mobile screens */
     gap: 2rem;
   }
-}
-
-.work_button {
-  text-decoration: none;
-  font-size: 16px;
-  font-weight: 500;
-  color: #0ef;
-}
-
-.work_button:hover {
-  text-decoration: underline;
 }
 
 /* Bottom Section - About Instructor */
