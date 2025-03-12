@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artworks - Fakiya's Portfolio</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+    <style>
+      .artwork-gallery {
+        padding: 2rem 9%;
+      }
+      
+      .gallery-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 2rem;
+        margin-top: 2rem;
+      }
+      
+      .artwork-item {
+        position: relative;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      
+      .artwork-item:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      }
+      
+      .artwork-img {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+        vertical-align: middle;
+        transition: transform 0.5s ease;
+      }
+      
+      .artwork-item:hover .artwork-img {
+        transform: scale(1.05);
+      }
+      
+      .artwork-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding: 1.5rem;
+        background: linear-gradient(0deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%);
+        color: #fff;
+        transform: translateY(100%);
+        transition: transform 0.3s ease;
+      }
+      
+      .artwork-item:hover .artwork-overlay {
+        transform: translateY(0);
+      }
+      
+      .artwork-title {
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+      }
+      
+      .artwork-description {
+        font-size: 0.9rem;
+        opacity: 0.8;
+      }
+      
+      .artwork-heading {
+        text-align: center;
+        margin-bottom: 2rem;
+      }
+      
+      .artwork-heading h1 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+      }
+      
+      .artwork-heading p {
+        font-size: 1.2rem;
+        max-width: 700px;
+        margin: 0 auto;
+        color: #666;
+      }
+      
+      /* Lightbox for images */
+      .lightbox {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+        justify-content: center;
+        align-items: center;
+      }
+      
+      .lightbox-content {
+        max-width: 90%;
+        max-height: 90%;
+      }
+      
+      .lightbox-img {
+        max-width: 100%;
+        max-height: 90vh;
+        border: 5px solid #fff;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+      }
+      
+      .close-lightbox {
+        position: absolute;
+        top: 20px;
+        right: 30px;
+        font-size: 2rem;
+        color: #fff;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header"> 
+      <a href="index.html" class="logo">Portfolio.</a>
+      <nav class="navbar">
+        <a href="index.html" style="--i:1;">Home</a>
+        <a href="about.html" style="--i:2;">About</a>
+        <a href="portfolio.html" style="--i:3;">Portfolio</a>
+        <a href="UI_UX fakiya@uni.minerva.edu, 2027, Resume (3).pdf" style="--i:4;">Resume</a>
+        <a href="#contacts" style="--i:5;">Contacts</a>
+      </nav>
+    </header>
+
+    <section class="portfolio">
+      <div class="portfolio-about">
+        <h1>My Artworks</h1>
+      </div>
+    </section>
+    
+    <section class="artwork-gallery">
+      <div class="artwork-heading">
+        <p>A collection of my creative works using Procreate, acrylic painting, and pen illustration.</p>
+      </div>
+      
+      <div class="gallery-container">
+        <!-- Artwork 1 -->
+        <div class="artwork-item">
+          <img src="images/IMG_2213.JPG" alt="Artwork 1" class="artwork-img">
+          <div class="artwork-overlay">
+            <h3 class="artwork-title">Digital Portrait</h3>
+            <p class="artwork-description">Created with Procreate on iPad</p>
+          </div>
+        </div>
+        
+        <!-- Artwork 2 -->
+        <div class="artwork-item">
+          <img src="images/IMG_2214.JPG" alt="Artwork 2" class="artwork-img">
+          <div class="artwork-overlay">
+            <h3 class="artwork-title">Digital Portrait</h3>
+            <p class="artwork-description">Created with Procreate on iPad</p>
+          </div>
+        </div>
+        
+        <!-- Artwork 3 -->
+        <div class="artwork-item">
+          <img src="images/IMG_2216.JPG" alt="Artwork 3" class="artwork-img">
+          <div class="artwork-overlay">
+            <h3 class="artwork-title">Acrylic Illustration</h3>
+            <p class="artwork-description">Fine liner on paper</p>
+          </div>
+        </div>
+        
+        <!-- Artwork 4 -->
+        <div class="artwork-item">
+          <img src="images/IMG_2215.JPG" alt="Artwork 4" class="artwork-img">
+          <div class="artwork-overlay">
+            <h3 class="artwork-title">Digital Landscape</h3>
+            <p class="artwork-description">Created with Procreate on iPad</p>
+          </div>
+        </div>
+        
+        <!-- Artwork 5 -->
+        <div class="artwork-item">
+          <img src="images/IMG_2217.JPG" alt="Artwork 5" class="artwork-img">
+          <div class="artwork-overlay">
+            <h3 class="artwork-title">Watercolor Study</h3>
+            <p class="artwork-description">Watercolor on cold press paper</p>
+          </div>
+        </div>
+        
+        <!-- Artwork 6 -->
+        <div class="artwork-item">
+          <img src="images/IMG_2218.JPG" alt="Artwork 6" class="artwork-img">
+          <div class="artwork-overlay">
+            <h3 class="artwork-title">Mixed Media</h3>
+            <p class="artwork-description">Acrylic and collage on canvas</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Instagram section -->
+    <section class="instagram-section" style="text-align: center; padding: 4rem 2rem; background-color: #1C2129;">
+      <h2 style="font-size: 2.5rem; margin-bottom: 2rem; color: #ffffff; font-weight: 600;">More Artwork on My Instagram</h2>
+      <a href="https://www.instagram.com/mycreaation?igsh=NTc4MTIwNjQ2YQ==" target="_blank" class="instagram-button" style="display: inline-block; background-color: #E1306C; color: white; font-size: 1.1rem; padding: 1rem 2.5rem; border-radius: 50px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(225, 48, 108, 0.3);">
+        <i class='bx bxl-instagram' style="margin-right: 8px;"></i> Follow on Instagram
+      </a>
+    </section>
+    
+    <!-- Lightbox for enlarged image view -->
+    <div class="lightbox" id="imageLightbox">
+      <span class="close-lightbox">&times;</span>
+      <div class="lightbox-content">
+        <img src="" alt="Enlarged artwork" class="lightbox-img" id="lightboxImage">
+      </div>
+    </div>
+    
+    <script>
+      // Lightbox functionality
+      const artworkItems = document.querySelectorAll('.artwork-item');
+      const lightbox = document.getElementById('imageLightbox');
+      const lightboxImg = document.getElementById('lightboxImage');
+      const closeLightbox = document.querySelector('.close-lightbox');
+      
+      artworkItems.forEach(item => {
+        item.addEventListener('click', () => {
+          const imgSrc = item.querySelector('.artwork-img').src;
+          lightboxImg.src = imgSrc;
+          lightbox.style.display = 'flex';
+        });
+      });
+      
+      closeLightbox.addEventListener('click', () => {
+        lightbox.style.display = 'none';
+      });
+      
+      lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) {
+          lightbox.style.display = 'none';
+        }
+      });
+    </script>
+  </body>
+</html>
